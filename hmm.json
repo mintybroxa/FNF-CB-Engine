@@ -13,12 +13,6 @@
       "url": "https://github.com/MobilePorting/linc_luajit-0.6.3"
     },
     {
-      "name": "extension-androidtools",
-      "type": "git",
-      "ref": "main",
-      "url": "https://github.com/MAJigsaw77/extension-androidtools"
-    },
-    {
       "name": "flixel",
       "type": "haxelib",
       "version": "4.11.0"
