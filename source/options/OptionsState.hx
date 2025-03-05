@@ -134,7 +134,7 @@ class OptionsState extends MusicBeatState
 			openSelectedSubstate(options[curSelected]);
 		}
 
-		if (touchPad != null && touchPad.buttonC.justPressed) {
+		if (touchPad != null && touchPad.buttonC.justPressed || FlxG.keys.justPressed.CONTROL && controls.mobileC) {
 			touchPad.active = touchPad.visible = persistentUpdate = false;
 			openSubState(new mobile.MobileControlSelectSubState());
 		}
