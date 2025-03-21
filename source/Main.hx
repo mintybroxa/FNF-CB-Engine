@@ -11,11 +11,11 @@ import openfl.display.Sprite;
 import openfl.events.Event;
 import openfl.display.StageScaleMode;
 import lime.app.Application;
-#if mobile
-import mobile.CopyState;
-#end
 #if (linux || mac)
 import lime.graphics.Image;
+#end
+#if mobile
+import mobile.CopyState;
 #end
 
 #if (linux && !debug)
