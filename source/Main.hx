@@ -14,7 +14,14 @@ import lime.app.Application;
 #if mobile
 import mobile.CopyState;
 #end
+#if (linux || mac)
+import lime.graphics.Image;
+#end
 
+#if (linux && !debug)
+@:cppInclude('./external/gamemode_client.h')
+@:cppFileCode('#define GAMEMODE_AUTO')
+#end
 class Main extends Sprite
 {
 	var gameWidth:Int = 1280; // Width of the game in pixels (might be less / more in actual pixels depending on your zoom).
@@ -99,6 +106,11 @@ class Main extends Sprite
 		if(fpsVar != null) {
 			fpsVar.visible = ClientPrefs.showFPS;
 		}
+
+		#if (linux || mac)
+		var icon = Image.fromFile("icon.png");
+		Lib.current.stage.window.setIcon(icon);
+		#end
 
 		#if html5
 		FlxG.autoPause = false;
