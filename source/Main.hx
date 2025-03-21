@@ -123,5 +123,7 @@ class Main extends Sprite
 		FlxG.android.preventDefaultKeys = [BACK]; 
 		#end
 		#end
+
+		Application.current.window.vsync = ClientPrefs.vsync;
 	}
 }
