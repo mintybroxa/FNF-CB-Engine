@@ -50,7 +50,7 @@ class Main extends Sprite
 		CrashHandler.init();
 
 		#if (cpp && windows)
-		backend.Native.fixScaling();
+		Native.fixScaling();
 		#end
 
 		super();
