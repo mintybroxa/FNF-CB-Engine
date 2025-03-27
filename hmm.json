@@ -2,9 +2,8 @@
   "dependencies": [
     {
       "name": "hxdiscord_rpc",
-      "type": "git",
-      "ref": "main",
-      "url": "https://github.com/MobilePorting/hxdiscord_rpc"
+      "type": "haxelib",
+      "version": null
     },
     {
       "name": "linc_luajit",
@@ -52,9 +51,8 @@
     },
     {
       "name": "openfl",
-      "type": "git",
-      "ref": "9.1.0",
-      "url": "https://github.com/MobilePorting/openfl"
+      "type": "haxelib",
+      "version": "9.1.0"
     }
   ]
 }
