@@ -1334,7 +1334,7 @@ class CharacterEditorState extends MusicBeatState
 
 	function onMouseEvent(e:MouseEvent):Void
 	{
-		if (!touchPad.anyPressed([ANY]))
+		if (touchPad != null && !touchPad.anyPressed([ANY]))
 			switch (e.type)
 			{
 				case MouseEvent.MOUSE_DOWN:
