@@ -82,7 +82,7 @@ class CreditsState extends MusicBeatState
 
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
 			['Psych Porting Team'],
-			['mcagabe19',				'lily',			'Head Porter of Psych Engine Mobile',						'https://youtube.com/@mcagabe19',		'FFE7C0'],
+			['HomuHomu833',				'lily',			'Head Porter of Psych Engine Mobile',						'https://youtube.com/@HomuHomu833',		'FFE7C0'],
 			[''],
 			['Mobile Special Thanks'],
 			['MAJigsaw77',				'jigsaw',			'Author of Mobile Controls, New FlxRuntimeShader and Storage Stuff',							'https://github.com/MAJigsaw77',               '898989'],

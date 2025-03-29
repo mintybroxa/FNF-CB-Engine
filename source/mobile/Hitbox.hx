@@ -41,7 +41,7 @@ import mobile.input.MobileInputManager;
  * A zone with 4 hint's (A hitbox).
  * It's really easy to customize the layout.
  *
- * @author: Karim Akra and Lily Ross (mcagabe19)
+ * @author: Karim Akra and Homura Akemi (HomuHomu833)
  */
 class Hitbox extends MobileInputManager implements IMobileControls
 {
