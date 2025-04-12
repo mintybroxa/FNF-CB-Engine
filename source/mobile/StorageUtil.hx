@@ -66,6 +66,10 @@ class StorageUtil
 	}
 
 	#if android
+	// always force path due to haxe
+	public static function getExternalStorageDirectory():String
+		return '/storage/emulated/0/.PsychEngine063/';
+
 	public static function requestPermissions():Void
 	{
 		if (AndroidVersion.SDK_INT >= AndroidVersionCode.TIRAMISU)

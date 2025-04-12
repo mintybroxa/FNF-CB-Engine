@@ -100,16 +100,16 @@ class TitleState extends MusicBeatState
 		//trace(path, FileSystem.exists(path));
 
 		/*#if (polymod && !html5)
-		if (sys.FileSystem.exists('mods/')) {
+		if (sys.FileSystem.exists(#if android StorageUtil.getExternalStorageDirectory() + #else Sys.getCwd() + #end 'mods/')) {
 			var folders:Array<String> = [];
-			for (file in sys.Paths.readDirectory('mods/')) {
-				var path = haxe.io.Path.join(['mods/', file]);
+			for (file in sys.Paths.readDirectory(#if android StorageUtil.getExternalStorageDirectory() + #else Sys.getCwd() + #end 'mods/')) {
+				var path = haxe.io.Path.join([#if android StorageUtil.getExternalStorageDirectory() + #else Sys.getCwd() + #end 'mods/', file]);
 				if (sys.FileSystem.isDirectory(path)) {
 					folders.push(file);
 				}
 			}
 			if(folders.length > 0) {
-				polymod.Polymod.init({modRoot: "mods", dirs: folders});
+				polymod.Polymod.init({modRoot: #if android StorageUtil.getExternalStorageDirectory() + #else Sys.getCwd() + #end "mods", dirs: folders});
 			}
 		}
 		#end*/

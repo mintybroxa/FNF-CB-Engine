@@ -76,6 +76,7 @@ class CrashHandler
 		#end
 
 		CoolUtil.showPopUp('$m\n$stackLabel', "Error!");
+		#if DISCORD_ALLOWED DiscordClient.shutdown(); #end
 		lime.system.System.exit(1);
 	}
 
@@ -94,6 +95,7 @@ class CrashHandler
 		#end
 
 		CoolUtil.showPopUp(log.join('\n'), "Critical Error!");
+		#if DISCORD_ALLOWED DiscordClient.shutdown(); #end
 		lime.system.System.exit(1);
 	}
 	#end
@@ -101,14 +103,14 @@ class CrashHandler
 	#if sys
 	private static function saveErrorMessage(message:String):Void
 	{
+		final folder:String = #if android StorageUtil.getExternalStorageDirectory() + #else Sys.getCwd() + #end 'logs/';
+
 		try
 		{
-			if (!FileSystem.exists('logs'))
-				FileSystem.createDirectory('logs');
+			if (!FileSystem.exists(folder))
+				FileSystem.createDirectory(folder);
 
-			File.saveContent('logs/'
-				+ Date.now().toString().replace(' ', '-').replace(':', "'")
-				+ '.txt', message);
+			File.saveContent(folder + Date.now().toString().replace(' ', '-').replace(':', "'") + '.txt', message);
 		}
 		catch (e:haxe.Exception)
 			trace('Couldn\'t save error message. (${e.message})');

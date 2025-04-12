@@ -450,7 +450,7 @@ class Paths
 	#if MODS_ALLOWED
 	inline static public function mods(key:String = '')
 	{
-		return #if mobile Sys.getCwd() + #end 'mods/' + key;
+		return #if android StorageUtil.getExternalStorageDirectory() + #else Sys.getCwd() + #end 'mods/' + key;
 	}
 
 	inline static public function modsFont(key:String)
@@ -532,7 +532,7 @@ class Paths
 			}
 			#end
 		}
-		return #if mobile Sys.getCwd() + #end 'mods/' + key;
+		return #if android StorageUtil.getExternalStorageDirectory() + #else Sys.getCwd() + #end 'mods/' + key;
 	}
 
 	#if linux
@@ -594,7 +594,7 @@ class Paths
 	static public function pushGlobalMods() // prob a better way to do this but idc
 	{
 		globalMods = [];
-		var path:String = #if mobile Sys.getCwd() + #end 'modsList.txt';
+		var path:String = #if android StorageUtil.getExternalStorageDirectory() + #else Sys.getCwd() + #end 'modsList.txt';
 		if (FileSystem.exists(path))
 		{
 			var list:Array<String> = CoolUtil.coolTextFile(path);
