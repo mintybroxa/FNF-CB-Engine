@@ -100,8 +100,8 @@ class StorageUtil
 
 		try
 		{
-			if (!FileSystem.exists(StorageUtil.getExternalStorageDirectory()))
-				FileSystem.createDirectory(StorageUtil.getExternalStorageDirectory());
+			if (!FileSystem.exists(StorageUtil.getExternalStorageDirectory() + 'mods'))
+				FileSystem.createDirectory(StorageUtil.getExternalStorageDirectory() + 'mods');
 		}
 		catch (e:Dynamic)
 		{
